@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "lBGTIxWVHEHGvdESPOJGmhpSRzOhYNUQVFcCnnI0NOSgI0HdTzqjNfjLoEpU0HO9+GgqHWxs+gQHAtjgSUasnQ==",
+  "dgSpecHash": "aA7NFiYbzgGOQzX7zB5xs/CZxZc3Pw8S+ocjcMy7jxbcoemMEYEA0MV9bGHBI4QXtXKov3TKnFDDhCkuSlarwA==",
   "success": true,
   "projectFilePath": "C:\\Users\\bridgelabz\\Desktop\\CensusAnalyser\\CensusAnalyser\\CensusAnalyser\\CensusAnalyser.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\bridgelabz\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

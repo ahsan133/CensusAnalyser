@@ -12,6 +12,8 @@ namespace CensusAnalyser
             int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(FILE_PATH);
             Console.WriteLine("Fetch CSV data for State Census {0} \n state Census Data {1}", CSVStateRecord, StateCensusRecord);
             StateCensusAnalyser.PrintData(FILE_PATH);
+
+            new CSVConvert(FILE_PATH).SortByState();
         }
     }
 }
