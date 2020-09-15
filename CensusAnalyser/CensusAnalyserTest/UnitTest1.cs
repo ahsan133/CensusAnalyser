@@ -8,10 +8,14 @@ namespace CensusAnalyserTest
     [TestClass]
     public class UnitTest1
     {
+        string FILE_PATH = @"C:\Users\bridgelabz\Desktop\CensusAnalyser\CSV files\IndiaStateCensusData.csv";
+        string STATE_CODE_FILE_PATH = @"C:\Users\bridgelabz\Desktop\CensusAnalyser\CSV files\IndiaStateCode.csv";
+        private string WRONG_FILEPATH = @"C:\Users\bridgelabz\Desktop\CensusAnalyser";
+        private string WRONG_FILETYPE = @"C:\Users\bridgelabz\Desktop\CensusAnalyser\CSV files\IndiaStateCensusData.cs";
+
         [TestMethod]
         public void GivenCensusCSVFile_WhenNumberOfRecordMatch_ThenItShouldReturnTrue()
         {
-            string FILE_PATH = @"C:\Users\bridgelabz\Desktop\CensusAnalyser\CSV files\IndiaStateCensusData.csv";
             int CSVStateRecord = CSVStateCensus.GetCensusRecord(FILE_PATH);
             int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(FILE_PATH);
             Assert.AreEqual(CSVStateRecord, StateCensusRecord);
@@ -22,9 +26,8 @@ namespace CensusAnalyserTest
         {
             try
             {
-                string FILE_PATH = @"C:\Users\bridgelabz\Desktop\CensusAnalyser";
-                int CSVStateRecord = CSVStateCensus.GetCensusRecord(FILE_PATH);
-                int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(FILE_PATH);
+                int CSVStateRecord = CSVStateCensus.GetCensusRecord(WRONG_FILEPATH);
+                int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(WRONG_FILEPATH);
                 Assert.AreEqual(CSVStateRecord, StateCensusRecord);
             }
             catch (DirectoryNotFoundException ex)
@@ -38,9 +41,8 @@ namespace CensusAnalyserTest
         {
             try
             {
-                string FILE_PATH = @"C:\Users\bridgelabz\Desktop\CensusAnalyser\CSV files\IndiaStateCensusData.cs";
-                int CSVStateRecord = CSVStateCensus.GetCensusRecord(FILE_PATH);
-                int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(FILE_PATH);
+                int CSVStateRecord = CSVStateCensus.GetCensusRecord(WRONG_FILETYPE);
+                int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(WRONG_FILETYPE);
                 Assert.AreEqual(CSVStateRecord, StateCensusRecord);
             }
             catch (FileNotFoundException ex)
@@ -54,7 +56,6 @@ namespace CensusAnalyserTest
         {
             try
             {
-                string FILE_PATH = @"C:\Users\bridgelabz\Desktop\CensusAnalyser\CSV files\IndiaStateCensusData.csV";
                 int CSVStateRecord = CSVStateCensus.GetCensusRecord(FILE_PATH);
                 int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(FILE_PATH);
                 Assert.AreEqual(CSVStateRecord, StateCensusRecord);
@@ -70,7 +71,6 @@ namespace CensusAnalyserTest
         {
             try
             {
-                string FILE_PATH = @"C:\Users\bridgelabz\Desktop\CensusAnalyser\CSV files\IndiaStateCensusData.csV";
                 int CSVStateRecord = CSVStateCensus.GetCensusRecord(FILE_PATH);
                 int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(FILE_PATH);
                 Assert.AreEqual(CSVStateRecord, StateCensusRecord);
@@ -84,9 +84,9 @@ namespace CensusAnalyserTest
         [TestMethod]
         public void GivenCensusCSVFileAndCSVState_WhenNumberOfRecordMatch_ThenItShouldReturnTrue()
         {
-            string FILE_PATH = @"C:\Users\bridgelabz\Desktop\CensusAnalyser\CSV files\IndiaStateCode.csv";
+
             int CSVStateRecord = CSVStates.GetRecord(FILE_PATH);
-            int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(FILE_PATH);
+            int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(STATE_CODE_FILE_PATH);
             Assert.AreEqual(CSVStateRecord, StateCensusRecord);
         }
 
@@ -95,9 +95,8 @@ namespace CensusAnalyserTest
         {
             try
             {
-                string FILE_PATH = @"C:\Users\bridgelabz\Desktop\CensusAnalyser";
-                int CSVStateRecord = CSVStates.GetRecord(FILE_PATH);
-                int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(FILE_PATH);
+                int CSVStateRecord = CSVStates.GetRecord(WRONG_FILEPATH);
+                int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(WRONG_FILEPATH);
                 Assert.AreEqual(CSVStateRecord, StateCensusRecord);
             }
             catch (DirectoryNotFoundException ex)
@@ -111,9 +110,8 @@ namespace CensusAnalyserTest
         {
             try
             {
-                string FILE_PATH = @"C:\Users\bridgelabz\Desktop\CensusAnalyser\CSV files\IndiaStateCode.cs";
-                int CSVStateRecord = CSVStates.GetRecord(FILE_PATH);
-                int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(FILE_PATH);
+                int CSVStateRecord = CSVStates.GetRecord(WRONG_FILETYPE);
+                int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(WRONG_FILETYPE);
                 Assert.AreEqual(CSVStateRecord, StateCensusRecord);
             }
             catch (FileNotFoundException ex)
@@ -127,9 +125,8 @@ namespace CensusAnalyserTest
         {
             try
             {
-                string FILE_PATH = @"C:\Users\bridgelabz\Desktop\CensusAnalyser\CSV files\IndiaStateCode.csv";
-                int CSVStateRecord = CSVStates.GetRecord(FILE_PATH);
-                int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(FILE_PATH);
+                int CSVStateRecord = CSVStates.GetRecord(STATE_CODE_FILE_PATH);
+                int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(STATE_CODE_FILE_PATH);
                 Assert.AreEqual(CSVStateRecord, StateCensusRecord);
             }
             catch (Exception ex)
@@ -143,9 +140,8 @@ namespace CensusAnalyserTest
         {
             try
             {
-                string FILE_PATH = @"C:\Users\bridgelabz\Desktop\CensusAnalyser\CSV files\IndiaStateCode.csv";
-                int CSVStateRecord = CSVStates.GetRecord(FILE_PATH);
-                int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(FILE_PATH);
+                int CSVStateRecord = CSVStates.GetRecord(STATE_CODE_FILE_PATH);
+                int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(STATE_CODE_FILE_PATH);
                 Assert.AreEqual(CSVStateRecord, StateCensusRecord);
             }
             catch (Exception ex)
