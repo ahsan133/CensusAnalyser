@@ -111,7 +111,7 @@ namespace CensusAnalyserTest
         {
             try
             {
-                string FILE_PATH = @"C:\Users\bridgelabz\Desktop\CensusAnalyser\CSV files\IndiaStateCode.csv";
+                string FILE_PATH = @"C:\Users\bridgelabz\Desktop\CensusAnalyser\CSV files\IndiaStateCode.cs";
                 int CSVStateRecord = CSVStates.GetRecord(FILE_PATH);
                 int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(FILE_PATH);
                 Assert.AreEqual(CSVStateRecord, StateCensusRecord);
@@ -119,6 +119,22 @@ namespace CensusAnalyserTest
             catch (FileNotFoundException ex)
             {
                 throw new CensusAnalyserException(CensusAnalyserException.ExceptionType.INCORRECT_FILETYPE, ex.Message);
+            }
+        }
+
+        [TestMethod]
+        public void GivenIncorrectDelimiterAndCSVState_WhenCompiled_ThenReturnsException()
+        {
+            try
+            {
+                string FILE_PATH = @"C:\Users\bridgelabz\Desktop\CensusAnalyser\CSV files\IndiaStateCode.csv";
+                int CSVStateRecord = CSVStates.GetRecord(FILE_PATH);
+                int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(FILE_PATH);
+                Assert.AreEqual(CSVStateRecord, StateCensusRecord);
+            }
+            catch (Exception ex)
+            {
+                throw new CensusAnalyserException(CensusAnalyserException.ExceptionType.DELIMITER_INCORRECT, ex.Message);
             }
         }
     }
