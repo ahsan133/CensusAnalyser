@@ -16,6 +16,20 @@ namespace CensusAnalyserTest
             Assert.AreEqual(CSVStateRecord, StateCensusRecord);
         }
 
-      
+        [TestMethod]
+        public void GivenIncorrectPath_WhenCompiled_ThenReturnsException()
+        {
+            try
+            {
+                string FILE_PATH = @"C:\Users\bridgelabz\Desktop\CensusAnalyser";
+                int CSVStateRecord = CSVStateCensus.GetCensusRecord(FILE_PATH);
+                int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(FILE_PATH);
+                Assert.AreEqual(CSVStateRecord, StateCensusRecord);
+            }
+            catch (DirectoryNotFoundException ex)
+            {
+                throw new CensusAnalyserException(CensusAnalyserException.ExceptionType.INVALID_FILEPATH, ex.Message);
+            }
+        }
     }
 }
