@@ -102,8 +102,8 @@ namespace CensusAnalyserTest
             CSVConvert jsonState = new CSVConvert(STATE_CODE_FILE_PATH);
             string jsonData = jsonState.SortByState();
             JArray jArray = JArray.Parse(jsonData);
-            string firstValueFromCsv = jArray[0]["StateName"].ToString();
-            Assert.AreEqual("Andaman and Nicobar Islands", firstValueFromCsv);
+            string firstValueFromCsv = jArray[0]["StateCode"].ToString();
+            Assert.AreEqual("AD", firstValueFromCsv);
         }
     }
 }
