@@ -1,5 +1,6 @@
 using CensusAnalyser;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.IO;
 
 namespace CensusAnalyserTest
@@ -45,6 +46,22 @@ namespace CensusAnalyserTest
             catch (FileNotFoundException ex)
             {
                 throw new CensusAnalyserException(CensusAnalyserException.ExceptionType.INCORRECT_FILETYPE, ex.Message);
+            }
+        }
+
+        [TestMethod]
+        public void GivenIncorrectDelimiter_WhenCompiled_ThenReturnsException()
+        {
+            try
+            {
+                string FILE_PATH = @"C:\Users\bridgelabz\Desktop\CensusAnalyser\CSV files\IndiaStateCensusData.csV";
+                int CSVStateRecord = CSVStateCensus.GetCensusRecord(FILE_PATH);
+                int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(FILE_PATH);
+                Assert.AreEqual(CSVStateRecord, StateCensusRecord);
+            }
+            catch (IOException ex)
+            {
+                throw new CensusAnalyserException(CensusAnalyserException.ExceptionType.DELIMITER_INCORRECT, ex.Message);
             }
         }
     }
