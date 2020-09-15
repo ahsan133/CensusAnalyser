@@ -31,5 +31,21 @@ namespace CensusAnalyserTest
                 throw new CensusAnalyserException(CensusAnalyserException.ExceptionType.INVALID_FILEPATH, ex.Message);
             }
         }
+
+        [TestMethod]
+        public void GivenIncorrectFileType_WhenCompiled_ThenReturnsException()
+        {
+            try
+            {
+                string FILE_PATH = @"C:\Users\bridgelabz\Desktop\CensusAnalyser\CSV files\IndiaStateCensusData.cs";
+                int CSVStateRecord = CSVStateCensus.GetCensusRecord(FILE_PATH);
+                int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(FILE_PATH);
+                Assert.AreEqual(CSVStateRecord, StateCensusRecord);
+            }
+            catch (FileNotFoundException ex)
+            {
+                throw new CensusAnalyserException(CensusAnalyserException.ExceptionType.INCORRECT_FILETYPE, ex.Message);
+            }
+        }
     }
 }
