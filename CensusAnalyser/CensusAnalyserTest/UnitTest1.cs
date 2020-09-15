@@ -90,6 +90,7 @@ namespace CensusAnalyserTest
             Assert.AreEqual(CSVStateRecord, StateCensusRecord);
         }
 
+        [TestMethod]
         public void GivenIncorrectPathAndCSVState_WhenCompiled_ThenReturnsException()
         {
             try
@@ -102,6 +103,22 @@ namespace CensusAnalyserTest
             catch (DirectoryNotFoundException ex)
             {
                 throw new CensusAnalyserException(CensusAnalyserException.ExceptionType.INVALID_FILEPATH, ex.Message);
+            }
+        }
+
+        [TestMethod]
+        public void GivenIncorrectFileTypeAndCSVState_WhenCompiled_ThenReturnsException()
+        {
+            try
+            {
+                string FILE_PATH = @"C:\Users\bridgelabz\Desktop\CensusAnalyser\CSV files\IndiaStateCode.csv";
+                int CSVStateRecord = CSVStates.GetRecord(FILE_PATH);
+                int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(FILE_PATH);
+                Assert.AreEqual(CSVStateRecord, StateCensusRecord);
+            }
+            catch (FileNotFoundException ex)
+            {
+                throw new CensusAnalyserException(CensusAnalyserException.ExceptionType.INCORRECT_FILETYPE, ex.Message);
             }
         }
     }
