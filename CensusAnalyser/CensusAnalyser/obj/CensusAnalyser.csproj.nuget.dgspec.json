@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bridgelabz\\Desktop\\ahsan\\CensusAnalyser\\CensusAnalyser\\CensusAnalyser\\CensusAnalyser.csproj": {}
+    "C:\\Users\\bridgelabz\\Desktop\\CensusAnalyser\\CensusAnalyser\\CensusAnalyser\\CensusAnalyser.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bridgelabz\\Desktop\\ahsan\\CensusAnalyser\\CensusAnalyser\\CensusAnalyser\\CensusAnalyser.csproj": {
+    "C:\\Users\\bridgelabz\\Desktop\\CensusAnalyser\\CensusAnalyser\\CensusAnalyser\\CensusAnalyser.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\CensusAnalyser\\CensusAnalyser\\CensusAnalyser\\CensusAnalyser.csproj",
+        "projectUniqueName": "C:\\Users\\bridgelabz\\Desktop\\CensusAnalyser\\CensusAnalyser\\CensusAnalyser\\CensusAnalyser.csproj",
         "projectName": "CensusAnalyser",
-        "projectPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\CensusAnalyser\\CensusAnalyser\\CensusAnalyser\\CensusAnalyser.csproj",
+        "projectPath": "C:\\Users\\bridgelabz\\Desktop\\CensusAnalyser\\CensusAnalyser\\CensusAnalyser\\CensusAnalyser.csproj",
         "packagesPath": "C:\\Users\\bridgelabz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\CensusAnalyser\\CensusAnalyser\\CensusAnalyser\\obj\\",
+        "outputPath": "C:\\Users\\bridgelabz\\Desktop\\CensusAnalyser\\CensusAnalyser\\CensusAnalyser\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bridgelabz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -17,7 +17,6 @@ namespace CensusAnalyser
             foreach (var element in numberOfRecords)
             {
                 Console.WriteLine(element);
-
             }
         }
     }

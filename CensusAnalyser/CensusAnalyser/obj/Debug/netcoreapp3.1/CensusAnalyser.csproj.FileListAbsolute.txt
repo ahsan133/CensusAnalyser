@@ -20,3 +20,16 @@ C:\Users\bridgelabz\Desktop\ahsan\CensusAnalyser\CensusAnalyser\CensusAnalyser\o
 C:\Users\bridgelabz\Desktop\ahsan\CensusAnalyser\CensusAnalyser\CensusAnalyser\obj\Debug\netcoreapp3.1\CensusAnalyser.AssemblyInfo.cs
 C:\Users\bridgelabz\Desktop\ahsan\CensusAnalyser\CensusAnalyser\CensusAnalyser\obj\Debug\netcoreapp3.1\CensusAnalyser.dll
 C:\Users\bridgelabz\Desktop\ahsan\CensusAnalyser\CensusAnalyser\CensusAnalyser\obj\Debug\netcoreapp3.1\CensusAnalyser.pdb
+C:\Users\bridgelabz\Desktop\CensusAnalyser\CensusAnalyser\CensusAnalyser\bin\Debug\netcoreapp3.1\CensusAnalyser.exe
+C:\Users\bridgelabz\Desktop\CensusAnalyser\CensusAnalyser\CensusAnalyser\bin\Debug\netcoreapp3.1\CensusAnalyser.deps.json
+C:\Users\bridgelabz\Desktop\CensusAnalyser\CensusAnalyser\CensusAnalyser\bin\Debug\netcoreapp3.1\CensusAnalyser.runtimeconfig.json
+C:\Users\bridgelabz\Desktop\CensusAnalyser\CensusAnalyser\CensusAnalyser\bin\Debug\netcoreapp3.1\CensusAnalyser.runtimeconfig.dev.json
+C:\Users\bridgelabz\Desktop\CensusAnalyser\CensusAnalyser\CensusAnalyser\bin\Debug\netcoreapp3.1\CensusAnalyser.dll
+C:\Users\bridgelabz\Desktop\CensusAnalyser\CensusAnalyser\CensusAnalyser\bin\Debug\netcoreapp3.1\CensusAnalyser.pdb
+C:\Users\bridgelabz\Desktop\CensusAnalyser\CensusAnalyser\CensusAnalyser\obj\Debug\netcoreapp3.1\CensusAnalyser.csprojAssemblyReference.cache
+C:\Users\bridgelabz\Desktop\CensusAnalyser\CensusAnalyser\CensusAnalyser\obj\Debug\netcoreapp3.1\CensusAnalyser.AssemblyInfoInputs.cache
+C:\Users\bridgelabz\Desktop\CensusAnalyser\CensusAnalyser\CensusAnalyser\obj\Debug\netcoreapp3.1\CensusAnalyser.AssemblyInfo.cs
+C:\Users\bridgelabz\Desktop\CensusAnalyser\CensusAnalyser\CensusAnalyser\obj\Debug\netcoreapp3.1\CensusAnalyser.csproj.CoreCompileInputs.cache
+C:\Users\bridgelabz\Desktop\CensusAnalyser\CensusAnalyser\CensusAnalyser\obj\Debug\netcoreapp3.1\CensusAnalyser.dll
+C:\Users\bridgelabz\Desktop\CensusAnalyser\CensusAnalyser\CensusAnalyser\obj\Debug\netcoreapp3.1\CensusAnalyser.pdb
+C:\Users\bridgelabz\Desktop\CensusAnalyser\CensusAnalyser\CensusAnalyser\obj\Debug\netcoreapp3.1\CensusAnalyser.genruntimeconfig.cache
