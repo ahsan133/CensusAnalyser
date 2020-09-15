@@ -80,5 +80,14 @@ namespace CensusAnalyserTest
                 throw new CensusAnalyserException(CensusAnalyserException.ExceptionType.HEADER_NOT_MATCH, ex.Message);
             }
         }
+
+        [TestMethod]
+        public void GivenCensusCSVFileAndCSVState_WhenNumberOfRecordMatch_ThenItShouldReturnTrue()
+        {
+            string FILE_PATH = @"C:\Users\bridgelabz\Desktop\CensusAnalyser\CSV files\IndiaStateCode.csV";
+            int CSVStateRecord = CSVStates.GetRecord(FILE_PATH);
+            int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(FILE_PATH);
+            Assert.AreEqual(CSVStateRecord, StateCensusRecord);
+        }
     }
 }
