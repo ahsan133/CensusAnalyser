@@ -1,5 +1,6 @@
 using CensusAnalyser;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.IO;
 
 namespace CensusAnalyserTest
 {
@@ -14,5 +15,7 @@ namespace CensusAnalyserTest
             int StateCensusRecord = StateCensusAnalyser.GetStateCensusRecord(FILE_PATH);
             Assert.AreEqual(CSVStateRecord, StateCensusRecord);
         }
+
+      
     }
 }
