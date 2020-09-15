@@ -96,6 +96,14 @@ namespace CensusAnalyserTest
             Assert.AreEqual("Andhra Pradesh", firstValueFromCsv);
         }
 
-
+        [TestMethod]
+        public void GivenIndianStateCodeData_WhenLoaded_ThenShouldReturnStateSortedResult()
+        {
+            CSVConvert jsonState = new CSVConvert(STATE_CODE_FILE_PATH);
+            string jsonData = jsonState.SortByState();
+            JArray jArray = JArray.Parse(jsonData);
+            string firstValueFromCsv = jArray[0]["StateName"].ToString();
+            Assert.AreEqual("Andaman and Nicobar Islands", firstValueFromCsv);
+        }
     }
 }
