@@ -15,11 +15,11 @@ namespace CensusAnalyser
             this.path = path;
         }
 
-        public void SortByState()
+        public string SortByState()
         {
             var list = JsonConvert.DeserializeObject<List<CSVFileModel>>(CsvToJSON());
             var orderedList = list.OrderBy(x => x.State);
-            Console.WriteLine(JsonConvert.SerializeObject(orderedList));
+            return JsonConvert.SerializeObject(orderedList);
         }
 
         public string CsvToJSON()

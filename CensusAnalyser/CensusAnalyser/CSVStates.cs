@@ -6,10 +6,18 @@ namespace CensusAnalyser
     {
         public static int GetRecord(string path)
         {
+            if (!path.EndsWith(".csv"))
+            {
+                throw new CensusAnalyserException(CensusAnalyserException.ExceptionType.INCORRECT_FILETYPE, "Invalid File Name");
+            }
             int count = 0;
             string[] CensusData = File.ReadAllLines(path);
             foreach (var data in CensusData)
             {
+                if (!data.Contains(":"))
+                {
+                    throw new CensusAnalyserException(CensusAnalyserException.ExceptionType.DELIMITER_INCORRECT, "Delimeter is Incorrect ");
+                }
                 count++;
             }
             return count - 1;

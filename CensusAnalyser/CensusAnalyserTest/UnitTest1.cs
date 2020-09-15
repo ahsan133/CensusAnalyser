@@ -1,5 +1,6 @@
 using CensusAnalyser;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json.Linq;
 using System;
 using System.IO;
 
@@ -74,15 +75,27 @@ namespace CensusAnalyserTest
         [TestMethod]
         public void GivenIncorrectDelimiterAndCSVState_WhenCompiled_ThenReturnsException()
         {
-            CensusAnalyserException exception = Assert.ThrowsException<CensusAnalyserException>(() => CSVStates.GetRecord(FILE_PATH));
+            CensusAnalyserException exception = Assert.ThrowsException<CensusAnalyserException>(() => CSVStates.GetRecord(STATE_CODE_FILE_PATH));
             Assert.AreEqual(CensusAnalyserException.ExceptionType.DELIMITER_INCORRECT, exception.type);
         }
 
         [TestMethod]
         public void GivenInvalidFileHeaderAndCSVState_WhenCompiled_ThenReturnsException()
         {
-            CensusAnalyserException exception = Assert.ThrowsException<CensusAnalyserException>(() => CSVStates.GetFileHeader(FILE_PATH));
+            CensusAnalyserException exception = Assert.ThrowsException<CensusAnalyserException>(() => CSVStates.GetFileHeader(STATE_CODE_FILE_PATH));
             Assert.AreEqual(CensusAnalyserException.ExceptionType.HEADER_NOT_MATCH, exception.type);
         }
+
+        [TestMethod]
+        public void GivenIndianStateCensusData_WhenLoaded_ThenShouldReturnStateSortedResult()
+        {
+            CSVConvert jsonState = new CSVConvert(FILE_PATH);
+            string jsonData = jsonState.SortByState();
+            JArray jArray = JArray.Parse(jsonData);
+            string firstValueFromCsv = jArray[0]["State"].ToString();
+            Assert.AreEqual("Andhra Pradesh", firstValueFromCsv);
+        }
+
+
     }
 }
