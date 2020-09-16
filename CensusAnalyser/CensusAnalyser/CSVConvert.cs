@@ -36,6 +36,12 @@ namespace CensusAnalyser
             return JsonConvert.SerializeObject(sortedList);
         }
 
+        public string SortByStatePopullationDensity()
+        {
+            var listOb = JsonConvert.DeserializeObject<List<CensusDAO>>(CsvToJSON());
+            var descListOb = listOb.OrderBy(x => x.DensityPerSqKm);
+            return JsonConvert.SerializeObject(descListOb);
+        }
         public string CsvToJSON()
         {
             var csv = new List<string[]>();
