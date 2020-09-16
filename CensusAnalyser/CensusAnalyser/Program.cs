@@ -17,6 +17,7 @@ namespace CensusAnalyser
             new CSVConvert(FILE_PATH).SortByState();
             new CSVConvert(STATE_CODE_FILE_PATH).SortByStateCode();
             new CSVConvert(FILE_PATH).SortByStatePopullation();
+            new CSVConvert(FILE_PATH).SortByStatePopullationDensity();
         }
     }
 }
