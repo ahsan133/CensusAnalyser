@@ -156,5 +156,15 @@ namespace CensusAnalyserTest
             string firstValueFromCsv = jArray[0]["PopulationDensity"].ToString();
             Assert.AreEqual("0.46", firstValueFromCsv);
         }
+
+        [TestMethod]
+        public void UCStateCodeDataTotalArea_WhenLoaded_ThenldReturnSortedResultByTotalArea()
+        {
+            CSVConvert jsonState = new CSVConvert(US_SENSUS_FILE_PATH);
+            string jsonData = jsonState.SortUSCensusDataByTotalArea();
+            JArray jArray = JArray.Parse(jsonData);
+            string firstValueFromCsv = jArray[0]["TotalArea"].ToString();
+            Assert.AreEqual("104655.80", firstValueFromCsv);
+        }
     }
 }
