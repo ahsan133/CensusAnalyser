@@ -31,7 +31,7 @@ namespace CensusAnalyser
 
         public string SortByStatePopullation()
         {
-            var listOb = JsonConvert.DeserializeObject<List<CSVFileModel>>(CsvToJSON());
+            var listOb = JsonConvert.DeserializeObject<List<CensusDAO>>(CsvToJSON());
             var sortedList = listOb.OrderBy(x => x.Population);
             return JsonConvert.SerializeObject(sortedList);
         }

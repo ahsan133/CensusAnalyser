@@ -115,5 +115,15 @@ namespace CensusAnalyserTest
             string firstValueFromCsv = jArray[0]["Population"].ToString();
             Assert.AreEqual("1052567", firstValueFromCsv);
         }
+
+        [TestMethod]
+        public void GivenIndianStateCodeData_WhenLoaded_ShouldReturnSortedResultByPopulationDensity()
+        {
+            CSVConvert jsonState = new CSVConvert(FILE_PATH);
+            string jsonData = jsonState.SortByStatePopullationDensity();
+            JArray jArray = JArray.Parse(jsonData);
+            string firstValueFromCsv = jArray[0]["PopulationDensity"].ToString();
+            Assert.AreEqual("0.46", firstValueFromCsv);
+        }
     }
 }
