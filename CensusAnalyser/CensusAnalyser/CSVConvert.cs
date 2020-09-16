@@ -14,34 +14,38 @@ namespace CensusAnalyser
         {
             this.path = path;
         }
-
         public string SortByState()
         {
             var list = JsonConvert.DeserializeObject<List<CensusDAO>>(CsvToJSON());
             var orderedList = list.OrderBy(x => x.State);
             return JsonConvert.SerializeObject(orderedList);
         }
-
         public string SortByStateCode()
         {
             var listOfStateCode = JsonConvert.DeserializeObject<List<CensusDAO>>(CsvToJSON());
             var descListOfStateCode = listOfStateCode.OrderBy(x => x.StateCode);
             return JsonConvert.SerializeObject(descListOfStateCode);
         }
-
         public string SortByStatePopullation()
         {
             var listOb = JsonConvert.DeserializeObject<List<CensusDAO>>(CsvToJSON());
             var sortedList = listOb.OrderBy(x => x.Population);
             return JsonConvert.SerializeObject(sortedList);
         }
-
         public string SortByStatePopullationDensity()
         {
             var listOb = JsonConvert.DeserializeObject<List<CensusDAO>>(CsvToJSON());
-            var descListOb = listOb.OrderBy(x => x.DensityPerSqKm);
-            return JsonConvert.SerializeObject(descListOb);
+            var sortedList = listOb.OrderBy(x => x.DensityPerSqKm);
+            return JsonConvert.SerializeObject(sortedList);
         }
+
+        public string SortByStateLagestArea()
+        {
+            var listOb = JsonConvert.DeserializeObject<List<CensusDAO>>(CsvToJSON());
+            var sortedList = listOb.OrderBy(x => x.AreaInSqKm);
+            return JsonConvert.SerializeObject(sortedList);
+        }
+
         public string CsvToJSON()
         {
             var csv = new List<string[]>();

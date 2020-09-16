@@ -122,8 +122,8 @@ namespace CensusAnalyserTest
             CSVConvert jsonState = new CSVConvert(FILE_PATH);
             string jsonData = jsonState.SortByStatePopullationDensity();
             JArray jArray = JArray.Parse(jsonData);
-            string firstValueFromCsv = jArray[0]["PopulationDensity"].ToString();
-            Assert.AreEqual("0.46", firstValueFromCsv);
+            string firstValueFromCsv = jArray[0]["DensityPerSqKm"].ToString();
+            Assert.AreEqual("50", firstValueFromCsv);
         }
     }
 }
