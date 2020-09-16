@@ -34,3 +34,4 @@ C:\Users\bridgelabz\Desktop\CensusAnalyser\CensusAnalyser\CensusAnalyser\obj\Deb
 C:\Users\bridgelabz\Desktop\CensusAnalyser\CensusAnalyser\CensusAnalyser\obj\Debug\netcoreapp3.1\CensusAnalyser.csproj.CoreCompileInputs.cache
 C:\Users\bridgelabz\Desktop\CensusAnalyser\CensusAnalyser\CensusAnalyser\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\bridgelabz\Desktop\CensusAnalyser\CensusAnalyser\CensusAnalyser\obj\Debug\netcoreapp3.1\CensusAnalyser.csproj.CopyComplete
+C:\Users\bridgelabz\Desktop\CensusAnalyser\CensusAnalyser\CensusAnalyser\obj\Debug\netcoreapp3.1\CensusAnalyser.csprojAssemblyReference.cache

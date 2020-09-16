@@ -123,7 +123,17 @@ namespace CensusAnalyserTest
             string jsonData = jsonState.SortByStatePopullationDensity();
             JArray jArray = JArray.Parse(jsonData);
             string firstValueFromCsv = jArray[0]["DensityPerSqKm"].ToString();
-            Assert.AreEqual("50", firstValueFromCsv);
+            Assert.AreEqual("1029", firstValueFromCsv);
+        }
+
+        [TestMethod]
+        public void GivenIndianStateCodeData_WhenLoaded_ShouldReturnSortedResultByArea()
+        {
+            CSVConvert jsonState = new CSVConvert(FILE_PATH);
+            string jsonData = jsonState.SortByStatePopullationDensity();
+            JArray jArray = JArray.Parse(jsonData);
+            string firstValueFromCsv = jArray[0]["AreaInSqKm"].ToString();
+            Assert.AreEqual("3702", firstValueFromCsv);
         }
     }
 }
