@@ -176,5 +176,15 @@ namespace CensusAnalyserTest
             string firstValueFromCsv = jArray[0]["WaterArea"].ToString();
             Assert.AreEqual("1026.21", firstValueFromCsv);
         }
+
+        [TestMethod]
+        public void UCStateCodeDataLandArea_WhenLoaded_ThenShouldReturnSortedResultByLandArea()
+        {
+            CSVConvert jsonState = new CSVConvert(US_SENSUS_FILE_PATH);
+            string jsonData = jsonState.SortUSCensusDataByWaterArea();
+            JArray jArray = JArray.Parse(jsonData);
+            string firstValueFromCsv = jArray[0]["LandArea"].ToString();
+            Assert.AreEqual("294207.53", firstValueFromCsv);
+        }
     }
 }
