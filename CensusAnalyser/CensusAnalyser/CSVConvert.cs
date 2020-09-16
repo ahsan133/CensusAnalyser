@@ -76,7 +76,7 @@ namespace CensusAnalyser
 
         public string SortUSCensusDataByLandArea()
         {
-            var listOb = JsonConvert.DeserializeObject<List<CensusDAO>>(JsonConverter());
+            var listOb = JsonConvert.DeserializeObject<List<CensusDAO>>(CsvToJSON());
             var sortedList = listOb.OrderBy(x => x.LandArea);
             return JsonConvert.SerializeObject(sortedList);
         }
