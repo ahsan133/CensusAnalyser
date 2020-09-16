@@ -17,14 +17,14 @@ namespace CensusAnalyser
 
         public string SortByState()
         {
-            var list = JsonConvert.DeserializeObject<List<CSVFileModel>>(CsvToJSON());
+            var list = JsonConvert.DeserializeObject<List<CensusDAO>>(CsvToJSON());
             var orderedList = list.OrderBy(x => x.State);
             return JsonConvert.SerializeObject(orderedList);
         }
 
         public string SortByStateCode()
         {
-            var listOfStateCode = JsonConvert.DeserializeObject<List<CSVFileModel>>(CsvToJSON());
+            var listOfStateCode = JsonConvert.DeserializeObject<List<CensusDAO>>(CsvToJSON());
             var descListOfStateCode = listOfStateCode.OrderBy(x => x.StateCode);
             return JsonConvert.SerializeObject(descListOfStateCode);
         }

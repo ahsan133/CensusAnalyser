@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CensusAnalyser
 {
-    public class CSVFileModel
+    public class CensusDAO
     {
         public string StateName { get; set; }
         public string StateCode { get; set; }
