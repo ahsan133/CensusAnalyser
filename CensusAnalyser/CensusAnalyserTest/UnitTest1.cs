@@ -108,7 +108,7 @@ namespace CensusAnalyserTest
         }
 
         [TestMethod]
-        public void GivenIndianStateCodeData_WhenLoaded_ShouldReturnSortedResultByPopulation()
+        public void GivenIndianStateCodeData_WhenLoaded_ThenShouldReturnSortedResultByPopulation()
         {
             CSVConvert jsonState = new CSVConvert(FILE_PATH);
             string jsonData = jsonState.SortByStatePopullation();
@@ -118,7 +118,7 @@ namespace CensusAnalyserTest
         }
 
         [TestMethod]
-        public void GivenIndianStateCodeData_WhenLoaded_ShouldReturnSortedResultByPopulationDensity()
+        public void GivenIndianStateCodeData_WhenLoaded_ThenShouldReturnSortedResultByPopulationDensity()
         {
             CSVConvert jsonState = new CSVConvert(FILE_PATH);
             string jsonData = jsonState.SortByStatePopullationDensity();
@@ -128,7 +128,7 @@ namespace CensusAnalyserTest
         }
 
         [TestMethod]
-        public void GivenIndianStateCodeData_WhenLoaded_ShouldReturnSortedResultByArea()
+        public void GivenIndianStateCodeData_WhenLoaded_ThenShouldReturnSortedResultByArea()
         {
             CSVConvert jsonState = new CSVConvert(FILE_PATH);
             string jsonData = jsonState.SortByStatePopullationDensity();
@@ -138,13 +138,23 @@ namespace CensusAnalyserTest
         }
 
         [TestMethod]
-        public void UCStateCodeData_WhenLoaded_ShouldReturnSortedResultByPopulation()
+        public void UCStateCodeData_WhenLoaded_ThenShouldReturnSortedResultByPopulation()
         {
             CSVConvert jsonState = new CSVConvert(US_SENSUS_FILE_PATH);
             string jsonData = jsonState.SortUSCensusDataByPopulousState();
             JArray jArray = JArray.Parse(jsonData);
             string firstValueFromCsv = jArray[0]["Population"].ToString();
             Assert.AreEqual("1052567", firstValueFromCsv);
+        }
+
+        [TestMethod]
+        public void UCStateCodeDataPopulationDensity_WhenLoaded_ThenShouldReturnSortedResultByPopulationDensity()
+        {
+            CSVConvert jsonState = new CSVConvert(US_SENSUS_FILE_PATH);
+            string jsonData = jsonState.SortUSCensusDataByPopulousDensity();
+            JArray jArray = JArray.Parse(jsonData);
+            string firstValueFromCsv = jArray[0]["PopulationDensity"].ToString();
+            Assert.AreEqual("0.46", firstValueFromCsv);
         }
     }
 }
