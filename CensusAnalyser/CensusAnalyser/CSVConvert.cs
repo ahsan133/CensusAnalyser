@@ -1,9 +1,9 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace CensusAnalyser
 {
@@ -103,6 +103,25 @@ namespace CensusAnalyser
             }
 
             return JsonConvert.SerializeObject(listObjResult);
+        }
+
+        public string MostPopulatedState()
+        {
+            string jsonFile;
+            var listOb = JsonConvert.DeserializeObject<List<CensusDAO>>(CsvToJSON());
+            if (path.EndsWith("IndiaStateCensusData.csv"))
+            {
+                var sortedList = listOb.OrderByDescending(x => x.Population).ThenByDescending(x => x.DensityPerSqKm);
+                jsonFile = JsonConvert.SerializeObject(sortedList);
+            }
+            else
+            {
+                var sortedList = listOb.OrderByDescending(x => x.Population).ThenByDescending(x => x.PopulationDensity);
+                jsonFile = JsonConvert.SerializeObject(sortedList);
+            }
+            
+            JArray jArray = JArray.Parse(jsonFile);
+            return jArray[0]["State"].ToString();
         }
     }
 }
