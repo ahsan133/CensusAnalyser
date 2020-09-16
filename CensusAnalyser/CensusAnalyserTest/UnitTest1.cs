@@ -11,6 +11,7 @@ namespace CensusAnalyserTest
     {
         string FILE_PATH = @"C:\Users\bridgelabz\Desktop\CensusAnalyser\CSV files\IndiaStateCensusData.csv";
         string STATE_CODE_FILE_PATH = @"C:\Users\bridgelabz\Desktop\CensusAnalyser\CSV files\IndiaStateCode.csv";
+        string US_SENSUS_FILE_PATH = @"C:\Users\bridgelabz\Desktop\CensusAnalyser\CSV files\USCensusData.csv";
         private string WRONG_FILEPATH = @"C:\Users\bridgelabz\Desktop\CensusAnalyser";
         private string WRONG_FILETYPE = @"C:\Users\bridgelabz\Desktop\CensusAnalyser\CSV files\IndiaStateCensusData.cs";
 
@@ -134,6 +135,16 @@ namespace CensusAnalyserTest
             JArray jArray = JArray.Parse(jsonData);
             string firstValueFromCsv = jArray[0]["AreaInSqKm"].ToString();
             Assert.AreEqual("3702", firstValueFromCsv);
+        }
+
+        [TestMethod]
+        public void UCStateCodeData_WhenLoaded_ShouldReturnSortedResultByPopulation()
+        {
+            CSVConvert jsonState = new CSVConvert(US_SENSUS_FILE_PATH);
+            string jsonData = jsonState.SortUSCensusDataByPopulousState();
+            JArray jArray = JArray.Parse(jsonData);
+            string firstValueFromCsv = jArray[0]["Population"].ToString();
+            Assert.AreEqual("1052567", firstValueFromCsv);
         }
     }
 }
