@@ -60,6 +60,13 @@ namespace CensusAnalyser
             return JsonConvert.SerializeObject(sortedList);
         }
 
+        public string SortUSCensusDataByTotalArea()
+        {
+            var listOb = JsonConvert.DeserializeObject<List<CSVUSSensusModel>>(CsvToJSON());
+            var sortedList = listOb.OrderBy(x => x.TotalArea);
+            return JsonConvert.SerializeObject(sortedList);
+        }
+
         public string CsvToJSON()
         {
             var csv = new List<string[]>();
