@@ -22,6 +22,7 @@ namespace CensusAnalyser
             new CSVConvert(FILE_PATH).SortByStateLagestArea();
 
             USCensus.GetUSCensusData(US_SENSUS_FILE_PATH);
+
         }
     }
 }
