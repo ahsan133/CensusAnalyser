@@ -29,11 +29,11 @@ namespace CensusAnalyser
             return JsonConvert.SerializeObject(descListOfStateCode);
         }
 
-        public void SortByStatePopullation()
+        public string SortByStatePopullation()
         {
             var listOb = JsonConvert.DeserializeObject<List<CSVFileModel>>(CsvToJSON());
-            var descListOb = listOb.OrderBy(x => x.Population);
-            Console.WriteLine(JsonConvert.SerializeObject(descListOb));
+            var sortedList = listOb.OrderBy(x => x.Population);
+            return JsonConvert.SerializeObject(sortedList);
         }
 
         public string CsvToJSON()
